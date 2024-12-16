@@ -1,0 +1,247 @@
+%-------------------------
+% Resume in Latex
+% Author : Nathan XIe
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+% only for pdflatex
+% \input{glyphtounicode}
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underilne
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.35in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% TODO EBSERIES
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+% only for pdflatex
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+% light blue colour
+\definecolor{lightblue}{RGB}{86, 147, 214} 
+%\definecolor{lightblue}{RGB}{78,165,209} 
+
+\newcommand{\resumeSubheading}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{}l@{\extracolsep{\fill}}r@{}}
+      \textbf{#1} \hspace{2pt} & {\color{lightblue}{#2}} & {\color{dark-grey}\small #3}\vspace{0pt}\\ % top row of resume entry
+      \textit{#4} \hspace{2pt} & {\color{lightblue}{#5}} & {\color{dark-grey} \small #6}\\ % second row of resume entry
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+% \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemi{\textbullet}  % First-level bullets
+\renewcommand\labelitemii{\textbullet} % Second-level bullets
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+% \newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{1pt}}
+
+\color{text-grey}
+% defines a color "mycolor" as pure red
+
+% Constants for commands
+\newcommand{\workExperienceNegSpace}{\vspace{-2pt}}
+\newcommand{\workExperiencePosSpace}{\vspace{2pt}}
+\newcommand{\largeSpace}{\vspace{-18pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \color{lightblue} Nathan Xie} \\ \vspace{5pt}
+    \small \faEnvelope \hspace{2pt} \texttt{\href{mailto:na3than.xie@gmail.com}{na3than.xie@gmail.com}} \hspace{1pt} $|$ 
+    \hspace{1pt} \faLinkedinIn \hspace{2pt} \texttt{\href{https://www.linkedin.com/in/nathanxie/}{/nathanxie}} \hspace{1pt} $|$
+    \hspace{1pt} \faGithub \hspace{2pt} \texttt{\href{https://github.com/na3th9n}{/na3th9n}} \hspace{1pt} %$|$
+    %%\hspace{1pt} \faLink \hspace{2pt} %\texttt{\href{https://strawluck.github.io/JasonLeWebsite/}{jasonle.com}}
+    \\ \vspace{-10pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{\textcolor{lightblue}{EDUCATION}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{}{Sep 2021 - Apr 2026}
+      {Bachelor of Applied Science in Mechatronics Engineering}{}{Waterloo, ON} \vspace{-6pt}
+      	\resumeItemListStart
+    	\resumeItem {\textbf{Relevant Computer Science Courses}: Algorithms and Data Structures (C++), Computer Structures (C)} \vspace{-2pt}
+  \resumeSubHeadingListEnd
+\vspace{-17pt}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{\textcolor{lightblue}{SKILLS}}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     \textbf{Languages:} {Python, JavaScript, TypeScript, C/C++, HTML/CSS}\vspace{2pt} \\
+     \textbf{Technologies / Tools:} {React, Node.js, Express.js, Next.js, Electron.js, SQL, Git, Bash, MongoDB, PostgreSQL, Svelte.js}\vspace{2pt} \\
+     \textbf{Concepts:} {Software Engineering, Data Analysis, Data Science, Databases, Web Frameworks, Fullstack, Frontend, Backend, REST API, Computer Vision, Probability, Linear Algebra, Robotics, Systems Design, Machine Learning \& AI}
+    }} \vspace{-12pt}
+ \end{itemize} 
+ 
+
+%-----------EXPERIENCE-----------
+\section{\textcolor{lightblue}{EXPERIENCE}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {HVE Healthcare Assessments \href{https://hvehealth.com/}{\faLink}}{}{Sep -- Present}
+      {Frontend Developer}{}{} 
+      \resumeItemListStart
+        \workExperiencePosSpace
+        \resumeItem{Engineered a \textbf{TypeScript-based backend library} to integrate with SmartSimple’s API, enabling data retrieval, transformation (formatting, mapping, etc.), and encryption, which improved code development efficiency by \textbf{50\%}.}
+        \resumeItem{Constructed the \textbf{frontend of a custom email application using Svelte}, providing comprehensive email functionality (sending, replying, etc.), consolidating all insurance claim-related emails into a single interface.}
+        \resumeItem{Built a TypeScript-based automation tool to extract and transform data from SmartSimple’s database into Excel, generating dynamic sales reports and financial summaries, \textbf{reducing manual data entry by 80\%}.}
+    \resumeItemListEnd 
+
+    \resumeSubheading
+      {WAT.ai \href{https://watai.ca/}{\faLink}}{}{Sep -- Present}
+      {Software Engineer}{}{} 
+      \resumeItemListStart
+        \workExperiencePosSpace
+        \resumeItem{Implemented \textbf{two POST endpoints using FastAPI} to handle user input for a Llama 3 model, enabling summarization of text and creating search vectors to retrieve relevant scientific documents, enhancing system functionality.}
+        \resumeItem{Developed web components, including a search bar, recommended prompts, and search results using React, enabling clients to search for research or scientific documents and receive summarized insights via a \textbf{trained ML model}.}
+    \resumeItemListEnd 
+ 
+    \resumeSubheading
+      {Magna International \href{https://www.magna.com/}{\faLink}}{}{Jan -- Apr 2024}
+      {Mechatronics Engineering Co-op}{}{} 
+      \resumeItemListStart
+        \workExperiencePosSpace
+        \resumeItem{Automated material property input to a database, increasing upload speed from \textbf{60 rows to 10,000 rows per minute}, by utilizing Pandas and SQLAlchemy to parse datasets, identify related keys, and update foreign key columns.}
+        \resumeItem{Led a team of three in the implementation of a database for material property data using SQL Server Management Studio, enhancing data management for \textbf{over 10,000 engineers} by developing schemas, tables, and security setups.}
+        \resumeItem{Created a web application using Plotly and Dash to display experimental test data in various forms such as interactive plots and graphs, enabling engineers to identify trends and calculate values, reducing data analysis time by \textbf{50\%}.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Co-operators \href{https://www.cooperators.ca/en/}{\faLink}}{}{Sep -- Dec 2022}
+      {Full-stack Developer}{}{} 
+      \resumeItemListStart
+        \workExperiencePosSpace
+        \resumeItem{Improved IT request handling efficiency by \textbf{90\%} by replacing the outdated Excel-based system with a modern interface developed using React, enabling the IT team to view, accept, or reject job requests through interactive tables.}
+        \resumeItem{Programmed RESTful API endpoints using Express.js and Node.js to handle IT job tickets, updating the database and IT dashboard with new requests in real-time, resulting in an \textbf{80\%} improvement in task tracking efficiency.}
+      \resumeItemListEnd
+
+      \resumeSubheading
+      {Electrovaya Inc. \href{https://electrovaya.com/}{\faLink}}{}{Jan -- Apr 2022}
+      {Software Engineer Co-op}{}{} 
+      \resumeItemListStart
+        \workExperiencePosSpace
+        \resumeItem{Engineered a Python-based CLI on a Pyboard to connect to forklift batteries for diagnostic data retrieval, allowing the company to send Pyboards to customers instead of technicians, reducing company expense by \textbf{90\% per service}.}
+        \resumeItem{Achieved \textbf{80\%} faster update speeds by implementing a \textbf{firmware updater} on a Pyboard that efficiently transmits hex code data directly to the forklift battery, using optimized data packetization for clients such as \textbf{Amazon and Walmart}.}
+      \resumeItemListEnd \vspace{-18pt}
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+
+\section{\textcolor{lightblue}{PROJECTS}}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+          {Statics ForceLab – 2D Physics FBD Problem Solver \href{https://github.com/jeffreyxuzhang/GambaBot}{\faGithub} -}{React, Javascript, Matter.js}{Sep -- Dec 2024}
+          {}{}{} \vspace{-15pt}
+          \resumeItemListStart
+            \resumeItem{Engineered a web application using React and Matter.js, a 2D physics engine library, to create an interactive platform that \textbf{helps students solve statics physics problems} by simulating forces and interactions.}
+          \resumeItemListEnd % Properly close the itemize environment here
+    \resumeSubHeadingListEnd % Properly close the subheading list here
+\end{document}
